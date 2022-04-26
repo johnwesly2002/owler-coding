@@ -1,0 +1,22 @@
+long long int left=0;
+        long long int right=n-1;
+        long long int lmax=0;
+        long long int rmax=0;
+        long long int store=0;
+        while(left<right){
+            if (arr[left]<arr[right]){
+                if (arr[left]>lmax){
+                    lmax=arr[left];
+                }else{
+                    store+=lmax-arr[left];
+                }
+             left+=1;   
+            }else{
+                if(arr[right]>rmax){
+                    rmax=arr[right];
+                }else{
+                    store+=rmax-arr[right];
+                }
+                right-=1;
+            }
+        }return store;
